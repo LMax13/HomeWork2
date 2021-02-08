@@ -1,0 +1,36 @@
+package com.dmdev.homeWorkLesson7;
+
+/**
+ * 1. Напишите программу, которая циклически сдвигает элементы
+ * массива вправо на одну позицию, и печатает результат.
+ * Цикличность означает, что последний элемент массива становится
+ * самым первым его элементом.
+ */
+public class Task1 {
+
+    public static void main(String[] args) {
+        int[] values = {1, 5, 7, 8, 4, 22};
+        shiftRight(values);
+        printArray(values);
+    }
+
+    public static int shiftRight(int[] values) {
+        int result = 0;
+        for (int i = 0; i < values.length; i++) {
+            int memory = values[values.length - 1];
+            for (int j = values.length - 1; j > 0; j--) {
+                values[j] = values[j - 1];
+            }
+            values[0] = memory;
+            break;
+        }
+        return result;
+    }
+
+    public static void printArray(int[] values) {
+        for (int i = 0; i < values.length; i++) {
+            System.out.print(values[i] + " ");
+        }
+        System.out.println();
+    }
+}
