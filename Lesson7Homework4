@@ -1,0 +1,40 @@
+package com.dmdev.homeworklesson7;
+
+/**
+ * 4. Написать функцию linearize, которая принимает в качестве параметра двумерный массив
+ * и возвращает одномерный массив со всеми элементами двумерного.
+ */
+public class Task4 {
+
+    public static void main(String[] args) {
+        int[][] values = {{1, 3, 4}, {3, 6, 5}, {7, 6, 7, 3}, {11, 5, 89}};
+        linearize(values);
+        printArray(linearize(values));
+    }
+
+    public static int[] linearize(int[][] values) {
+        int[] result = new int[counterSymbol(values)];
+        int resultStep = 0;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values[i].length; j++) {
+                result[resultStep++] = values[i][j];
+            }
+        }
+        return result;
+    }
+
+    public static int counterSymbol(int[][] values) {
+        int result = 0;
+        for (int[] m : values) {
+            result += m.length;
+        }
+        return result;
+    }
+
+    public static void printArray(int[] values) {
+        for (int i = 0; i < values.length; i++) {
+            System.out.print(values[i] + " ");
+        }
+        System.out.println();
+    }
+}
