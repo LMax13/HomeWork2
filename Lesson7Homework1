@@ -1,4 +1,4 @@
-package com.dmdev.homeWorkLesson7;
+package com.dmdev.homeworklesson7;
 
 /**
  * 1. Напишите программу, которая циклически сдвигает элементы
@@ -9,22 +9,17 @@ package com.dmdev.homeWorkLesson7;
 public class Task1 {
 
     public static void main(String[] args) {
-        int[] values = {1, 5, 7, 8, 4, 22};
+        int[] values = {1, 5, 7, 8, 4, 22,};
         shiftRight(values);
         printArray(values);
     }
 
-    public static int shiftRight(int[] values) {
-        int result = 0;
-        for (int i = 0; i < values.length; i++) {
-            int memory = values[values.length - 1];
-            for (int j = values.length - 1; j > 0; j--) {
-                values[j] = values[j - 1];
-            }
-            values[0] = memory;
-            break;
+    public static void shiftRight(int[] values) {
+        int temp = values[values.length - 1];
+        for (int j = values.length - 1; j > 0; j--) {
+            values[j] = values[j - 1];
         }
-        return result;
+        values[0] = temp;
     }
 
     public static void printArray(int[] values) {
